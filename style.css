@@ -12,6 +12,15 @@ h1 {
     margin-bottom: 0;
 }
 
+input {
+    height: 24px;
+    font-size: 18px;
+}
+
+#tag {
+    width: 70px;
+}
+
 #result {
     font-size: 32px;
 }
