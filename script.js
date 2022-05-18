@@ -14,10 +14,10 @@ const generate = () => {
     let resultTag = ''
     let nChar = tag.value.length;
 
-    let gradient = new Gradient()
+    let gradient = [colorStart.value, ...(new Gradient()
         .setColorGradient(colorStart.value, colorEnd.value)
-        .setMidpoint(nChar)
-        .getColors()
+        .setMidpoint(Math.abs(nChar - 1))
+        .getColors())]
 
     for (let i = 0; i < nChar; i++) {
         let hex = gradient[i]
