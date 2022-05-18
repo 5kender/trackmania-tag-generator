@@ -19,8 +19,6 @@ const generate = () => {
         .setMidpoint(nChar)
         .getColors()
 
-    console.log(nChar, gradient)
-
     for (let i = 0; i < nChar; i++) {
         let hex = gradient[i]
         let tmColor = '$'
@@ -29,7 +27,12 @@ const generate = () => {
         resultTag += '<span style="color: ' + hex + '">' + tag.value[i] + '</span>'
     }
     
-    result.innerHTML = '[' + resultTag.toUpperCase() + '] ' + username.value.toUpperCase()
+    if (0 == nChar) {
+        result.innerHTML = '<br>'
+    } else {
+        result.innerHTML = '[' + resultTag.toUpperCase() + '] ' + username.value.toUpperCase()
+    }
+
     code.innerText = 'Code : ' + codeTag
 }
 
