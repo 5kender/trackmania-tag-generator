@@ -7,7 +7,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 
     <title>Trackmania Tag Generator</title>
@@ -30,8 +31,23 @@
         
         <label for="colorEnd">End color</label>
         <input type="color" name="colorEnd" id="colorEnd">
+    </div>
 
-        <button id="swapColors">Swap colors</button>
+    <div class="color-inputs">
+        <input type="checkbox" name="wide" id="wide">
+        <label for="wide">Wide</label>
+
+        <input type="checkbox" name="narrow" id="narrow">
+        <label for="narrow">Narrow</label>
+
+        <input type="checkbox" name="bold" id="bold">
+        <label for="bold">Bold</label>
+
+        <input type="checkbox" name="italic" id="italic" checked>
+        <label for="italic">Italic</label>
+
+        <input type="checkbox" name="shadow" id="shadow">
+        <label for="shadow">Shadow</label>
     </div>
 
     <p id="result"></p>

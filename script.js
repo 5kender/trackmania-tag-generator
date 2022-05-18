@@ -29,6 +29,8 @@ const generate = () => {
         codeTag += tmColor + tag.value[i]
         resultTag += '<span style="color: ' + hex + '">' + tag.value[i] + '</span>'
     }
+
+    // TODO : transform $ to $$
     
     if (0 == nChar) {
         result.innerHTML = '<br>'
