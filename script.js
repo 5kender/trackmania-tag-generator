@@ -8,6 +8,9 @@ const colorStart = document.getElementById('colorStart')
 const colorEnd = document.getElementById('colorEnd')
 const swapColors = document.getElementById('swapColors')
 const inputs = document.getElementsByTagName('input')
+const copyCode = document.getElementById('copyCode')
+
+let codeToCopy
 
 const generate = () => {
     let codeTag = ''
@@ -29,11 +32,15 @@ const generate = () => {
     
     if (0 == nChar) {
         result.innerHTML = '<br>'
+        code.innerHTML = '<br>'
+        copyCode.hidden = true
     } else {
         result.innerHTML = '[' + resultTag.toUpperCase() + '] ' + username.value.toUpperCase()
+        code.innerText = 'Code : ' + codeTag
+        copyCode.hidden = false
     }
 
-    code.innerText = 'Code : ' + codeTag
+    codeToCopy = codeTag
 }
 
 generate()
@@ -48,4 +55,9 @@ swapColors.addEventListener('click', () => {
     colorStart.value = endColor
     colorEnd.value = startColor
     generate()
+})
+
+copyCode.addEventListener('click', () => {
+    console.log('copy')
+    navigator.clipboard.writeText(codeToCopy);
 })
