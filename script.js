@@ -20,7 +20,7 @@ const generate = () => {
     }
     
     result.innerHTML = '[' + resultTag.toUpperCase() + '] ' + username.value.toUpperCase()
-    code.innerText = codeTag
+    code.innerText = 'Code : ' + codeTag
 }
 
 generate()

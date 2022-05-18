@@ -1,6 +1,25 @@
 body {
+    margin: 16px;
+
     background-color: #2cb172;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+#result {
+    font-size: 32px;
+}
+
+.text-inputs {
+    margin-top: 32px;
+}
+
+.color-inputs {
+    margin-top: 12px;
 }
