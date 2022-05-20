@@ -43,18 +43,31 @@ input {
 
 #result.narrow .result-tag {
     display: inline-block;
-    transform: scaleX(55%);
+    font-size: 17px;
+    transform: scaleY(2.0);
+    transform-origin: 0 0%;
+    vertical-align: top;
 }
 
 #result.wide .result-tag {
     display: inline-block;
-    transform: scaleX(155%);
+    font-size: 48px;
+    transform: scaleY(0.7);
+    transform-origin: 0 0;
+    margin-bottom: -50%;
+    vertical-align: top;
 }
+
+
 
 #result.bold .result-tag {
     font-weight: 900;
 }
 
 #result.shadow .result-tag {
-    text-shadow: 1.5px 1.5px 0px #000;;
+    text-shadow: 1.5px 1px 0px #000;
+}
+
+#result.shadow.narrow .result-tag {
+    text-shadow: 1.5px 0.5px 0px #000;
 }
