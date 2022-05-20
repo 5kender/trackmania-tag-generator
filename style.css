@@ -38,3 +38,23 @@ input {
 #code {
     margin-bottom: 12px;
 }
+
+/* Styles */
+
+#result.narrow .result-tag {
+    display: inline-block;
+    transform: scaleX(55%);
+}
+
+#result.wide .result-tag {
+    display: inline-block;
+    transform: scaleX(155%);
+}
+
+#result.bold .result-tag {
+    font-weight: 900;
+}
+
+#result.shadow .result-tag {
+    text-shadow: 1.5px 1.5px 0px #000;;
+}
