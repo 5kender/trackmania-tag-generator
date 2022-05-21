@@ -39,6 +39,10 @@ input {
     margin-bottom: 12px;
 }
 
+a {
+    color: #fff;
+}
+
 /* Styles */
 
 #result.narrow .result-tag {
@@ -57,7 +61,6 @@ input {
     margin-bottom: -50%;
     vertical-align: top;
 }
-
 
 
 #result.bold .result-tag {
