@@ -87,7 +87,7 @@ function generate () {
     
         for (let i = 0; i < nChar; i++) {
             let hex = gradient[i]
-            codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value[i]
+            codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value[i].replace('$', '$$$')
             resultTag += '<span style="color: ' + hex + '">' + tag.value[i] + '</span>'
         }
     } else if (oneColor.checked) {
@@ -95,11 +95,9 @@ function generate () {
         wrapperGradiant.style.display = 'none'
 
         let hex = color1.value
-        codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value
+        codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value.replace('$', '$$$')
         resultTag += '<span style="color: ' + hex + '">' + tag.value + '</span>'
     }
-
-    // TODO : transform $ to $$
     
     if (0 == nChar) {
         result.innerHTML = '<br>'
