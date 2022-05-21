@@ -4,9 +4,16 @@ const result = document.getElementById('result')
 const code = document.getElementById('code')
 const tag = document.getElementById('tag')
 const username = document.getElementById('username')
+
+const gradiant = document.getElementById('gradiant')
+const oneColor = document.getElementById('oneColor')
 const colorStart = document.getElementById('colorStart')
 const colorEnd = document.getElementById('colorEnd')
+const color1 = document.getElementById('color1')
 const swapColors = document.getElementById('swapColors')
+const wrapperGradiant = document.getElementById('wrapperGradiant')
+const wrapperOneColor = document.getElementById('wrapperOneColor')
+
 const inputs = document.getElementsByTagName('input')
 const copyCode = document.getElementById('copyCode')
 
@@ -40,6 +47,15 @@ function generate () {
     let codeTag = ''
     let resultTag = ''
     let nChar = tag.value.length;
+
+    if (gradiant.checked) {
+        wrapperGradiant.style.display = 'block'
+        wrapperOneColor.style.display = 'none'
+    }
+    if (oneColor.checked) {
+        wrapperOneColor.style.display = 'block'
+        wrapperGradiant.style.display = 'none'
+    }
 
     if (wide.checked) {
         codeTag += '$w'

@@ -25,7 +25,16 @@
         <input type="text" name="username" id="username">
     </div>
 
+    
     <div class="color-inputs">
+        <input type="radio" name="colorType" id="gradiant" checked>
+        <label for="gradiant">Gradiant</label>
+
+        <input type="radio" name="colorType" id="oneColor">
+        <label for="oneColor">One color</label>
+    </div>
+
+    <div class="color-inputs" id="wrapperGradiant">
         <label for="colorStart">Start color</label>
         <input type="color" name="colorStart" id="colorStart" value="#ffffff">
         
@@ -33,6 +42,11 @@
         <input type="color" name="colorEnd" id="colorEnd" value="#ffffff">
 
         <button id="swapColors">Swap colors</button>
+    </div>
+
+    <div class="color-inputs" id="wrapperOneColor">
+        <label for="color1">Color</label>
+        <input type="color" name="color1" id="color1" value="#ffffff">
     </div>
 
     <div class="style-inputs">
