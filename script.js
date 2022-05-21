@@ -46,17 +46,8 @@ copyCode.addEventListener('click', () => {
 function generate () {
     let codeTag = ''
     let resultTag = ''
-    let nChar = tag.value.length;
-
-    if (gradiant.checked) {
-        wrapperGradiant.style.display = 'block'
-        wrapperOneColor.style.display = 'none'
-    }
-    if (oneColor.checked) {
-        wrapperOneColor.style.display = 'block'
-        wrapperGradiant.style.display = 'none'
-    }
-
+    let nChar = tag.value.length
+    
     if (wide.checked) {
         codeTag += '$w'
         result.classList.add('wide')
@@ -85,15 +76,27 @@ function generate () {
         result.classList.remove('shadow')
     }
 
-    let gradient = [colorStart.value, ...(new Gradient()
-        .setColorGradient(colorStart.value, colorEnd.value)
-        .setMidpoint(Math.abs(nChar - 1))
-        .getColors())]
+    if (gradiant.checked) {
+        wrapperGradiant.style.display = 'block'
+        wrapperOneColor.style.display = 'none'
 
-    for (let i = 0; i < nChar; i++) {
-        let hex = gradient[i]
-        codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value[i]
-        resultTag += '<span style="color: ' + hex + '">' + tag.value[i] + '</span>'
+        let gradient = [colorStart.value, ...(new Gradient()
+            .setColorGradient(colorStart.value, colorEnd.value)
+            .setMidpoint(Math.abs(nChar - 1))
+            .getColors())]
+    
+        for (let i = 0; i < nChar; i++) {
+            let hex = gradient[i]
+            codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value[i]
+            resultTag += '<span style="color: ' + hex + '">' + tag.value[i] + '</span>'
+        }
+    } else if (oneColor.checked) {
+        wrapperOneColor.style.display = 'block'
+        wrapperGradiant.style.display = 'none'
+
+        let hex = color1.value
+        codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value
+        resultTag += '<span style="color: ' + hex + '">' + tag.value + '</span>'
     }
 
     // TODO : transform $ to $$
