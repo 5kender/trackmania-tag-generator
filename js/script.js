@@ -14,6 +14,7 @@ const color1 = document.getElementById('color1')
 const swapColors = document.getElementById('swapColors')
 const wrapperGradiant = document.getElementById('wrapperGradiant')
 const wrapperOneColor = document.getElementById('wrapperOneColor')
+const bgColor = document.getElementById('bgColor')
 
 const inputs = document.getElementsByTagName('input')
 const copyCode = document.getElementById('copyCode')
@@ -117,8 +118,11 @@ function generate () {
         code.innerHTML = '<br>'
         copyCode.hidden = true
     } else {
-        let usernameText = username ? username.value.toUpperCase() : ''
-        result.innerHTML = '[<span class="result-tag">' + resultTag.toUpperCase() + '</span>] ' + usernameText
+        if (tag) {
+            result.innerHTML = '[<span class="result-tag">' + resultTag.toUpperCase() + '</span>] ' + username.value.toUpperCase()
+        } else if (mapName) {
+            result.innerHTML = '<span class="result-tag">' + resultTag + '</span>'
+        }
         code.innerText = 'Code : ' + codeTag
         copyCode.hidden = false
     }
