@@ -31,6 +31,11 @@ input {
     font-size: 32px;
 }
 
+.result-map-name {
+    padding: 15px 20px;
+    background-color: #003228;
+}
+
 .text-inputs {
     margin-top: 32px;
 }

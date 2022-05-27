@@ -83,6 +83,12 @@ function generate () {
         result.classList.remove('shadow')
     }
 
+    // Background color for map name
+
+    if (bgColor) {
+        result.style.backgroundColor = bgColor.value
+    }
+
     if (gradiant.checked) {
         wrapperGradiant.style.display = 'block'
         wrapperOneColor.style.display = 'none'
