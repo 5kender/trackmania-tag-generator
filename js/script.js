@@ -3,6 +3,7 @@ import Gradient from "./gradient.js"
 const result = document.getElementById('result')
 const code = document.getElementById('code')
 const tag = document.getElementById('tag')
+const mapName = document.getElementById('mapName')
 const username = document.getElementById('username')
 
 const gradiant = document.getElementById('gradiant')
@@ -23,6 +24,7 @@ const bold = document.getElementById('bold')
 const shadow = document.getElementById('shadow')
 
 let codeToCopy
+let textToFormat
 
 generate()
 
@@ -44,9 +46,14 @@ copyCode.addEventListener('click', () => {
 })
 
 function generate () {
+    if (tag) {
+        textToFormat = tag.value
+    } else if (mapName) {
+        textToFormat = mapName.value
+    }
     let codeTag = ''
     let resultTag = ''
-    let nChar = tag.value.length
+    let nChar = textToFormat.length
     
     if (wide.checked) {
         codeTag += '$w'
@@ -87,16 +94,16 @@ function generate () {
     
         for (let i = 0; i < nChar; i++) {
             let hex = gradient[i]
-            codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value[i].replace('$', '$$$')
-            resultTag += '<span style="color: ' + hex + '">' + tag.value[i] + '</span>'
+            codeTag += '$' + hex[1] + hex[3] + hex[5] + textToFormat[i].replace('$', '$$$')
+            resultTag += '<span style="color: ' + hex + '">' + textToFormat[i] + '</span>'
         }
     } else if (oneColor.checked) {
         wrapperOneColor.style.display = 'block'
         wrapperGradiant.style.display = 'none'
 
         let hex = color1.value
-        codeTag += '$' + hex[1] + hex[3] + hex[5] + tag.value.replace('$', '$$$')
-        resultTag += '<span style="color: ' + hex + '">' + tag.value + '</span>'
+        codeTag += '$' + hex[1] + hex[3] + hex[5] + textToFormat.replace('$', '$$$')
+        resultTag += '<span style="color: ' + hex + '">' + textToFormat + '</span>'
     }
     
     if (0 == nChar) {
@@ -104,7 +111,8 @@ function generate () {
         code.innerHTML = '<br>'
         copyCode.hidden = true
     } else {
-        result.innerHTML = '[<span class="result-tag">' + resultTag.toUpperCase() + '</span>] ' + username.value.toUpperCase()
+        let usernameText = username ? username.value.toUpperCase() : ''
+        result.innerHTML = '[<span class="result-tag">' + resultTag.toUpperCase() + '</span>] ' + usernameText
         code.innerText = 'Code : ' + codeTag
         copyCode.hidden = false
     }

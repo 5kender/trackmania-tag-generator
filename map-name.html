@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="/favicon.ico" sizes="any"><!-- 32×32 -->
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <title>Trackmania Map Name Generator</title>
+</head>
+<body>
+    <small><a href="club-tag.html">Club Tag</a></small>
+
+    <h1>Trackmania Map Name Generator</h1>
+    <small>by 5kender#0035</small>
+    <small><a href="https://github.com/5kender/trackmania-tag-generator" target="_blank" rel="noopener">(source code)</a></small>
+
+    <div class="text-inputs">
+        <label for="mapName">Map name</label>
+        <input type="text" name="mapName" id="mapName">
+    </div>
+
+    
+    <div class="color-inputs">
+        <input type="radio" name="colorType" id="gradiant" checked>
+        <label for="gradiant">Gradiant</label>
+
+        <input type="radio" name="colorType" id="oneColor">
+        <label for="oneColor">One color</label>
+    </div>
+
+    <div class="color-inputs" id="wrapperGradiant">
+        <label for="colorStart">Start color</label>
+        <input type="color" name="colorStart" id="colorStart" value="#ffffff">
+        
+        <label for="colorEnd">End color</label>
+        <input type="color" name="colorEnd" id="colorEnd" value="#ffffff">
+
+        <button id="swapColors">Swap colors</button>
+    </div>
+
+    <div class="color-inputs" id="wrapperOneColor">
+        <label for="color1">Color</label>
+        <input type="color" name="color1" id="color1" value="#ffffff">
+    </div>
+
+    <div class="style-inputs">
+        <input type="checkbox" name="wide" id="wide">
+        <label for="wide">Wide</label>
+
+        <input type="checkbox" name="narrow" id="narrow">
+        <label for="narrow">Narrow</label>
+
+        <input type="checkbox" name="bold" id="bold">
+        <label for="bold">Bold</label>
+
+        <input type="checkbox" name="shadow" id="shadow">
+        <label for="shadow">Shadow</label>
+    </div>
+
+    <p id="result"></p>
+    <p id="code"></p>
+    
+    <button id="copyCode">Copy code</button>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

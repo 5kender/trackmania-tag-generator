@@ -23,6 +23,10 @@ input {
     width: 70px;
 }
 
+#mapName {
+    width: 400px;
+}
+
 #result {
     font-size: 32px;
 }
